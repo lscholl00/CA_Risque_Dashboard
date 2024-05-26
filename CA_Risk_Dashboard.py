@@ -22,7 +22,7 @@ import os
 st.set_page_config(layout="wide") 
 
 # Set directory
-base_dir = 'https://github.com/lscholl00/CA_Risque_Dashboard/tree/3dbaef976297edc5a44188da7f57e84a5b97d5c4/streamlit_files/'
+base_dir = 'streamlit_files'
 os.chdir(base_dir)
 
 # Load data
