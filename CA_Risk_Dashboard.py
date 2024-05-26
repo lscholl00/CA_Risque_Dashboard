@@ -173,7 +173,7 @@ def render_tab1():
             f"<b>Risque Sécheresse ({selected_year}):</b> {row['risk_sech']}<br>"
             f"<b>Risque Historique:</b> {row['normalized_historical_risk_score']}<br>"
             f"<b>Risque Moyen:</b> {row['average_risk']}<br>"
-            f"<b>Niveau de risque :</b>(Aucun risque) 0  -  1 (Risque maximum)</div>"
+            f"<b>Niveau de risque:</b> (Aucun risque) 0  -  1 (Risque maximum)</div>"
         )
         geojson = folium.GeoJson(
             data=geom,
