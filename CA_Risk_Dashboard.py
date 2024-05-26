@@ -23,7 +23,7 @@ import os
 st.set_page_config(layout="wide") 
 
 # Set directory
-base_dir = r'C:\Users\Source\Downloads\Hackathon_Open_Data\streamlit_files'
+base_dir = 'streamlit_files'
 os.chdir(base_dir)
 
 # Load data
