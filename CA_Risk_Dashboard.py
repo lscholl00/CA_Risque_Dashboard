@@ -362,7 +362,7 @@ def render_tab3():
         events_df = inon_events()
 
         # Filter events from 2000 to end of 2023
-        start_date = datetime(2000, 1, 1)  
+        start_date = datetime(1995, 1, 1)  
         end_date = datetime(2023, 12, 31)   
         
         events_df = events_df[(events_df['dat_deb'] >= start_date) & (events_df['dat_deb'] <= end_date)]
@@ -398,7 +398,7 @@ def render_tab3():
          events_df = sech_events()
 
          # Filter events from 2000 to end of 2023
-         start_date = datetime(2000, 1, 1)  
+         start_date = datetime(1995, 1, 1)  
          end_date = datetime(2023, 12, 31)   
         
          events_df = events_df[(events_df['dat_deb'] >= start_date) & (events_df['dat_deb'] <= end_date)]
