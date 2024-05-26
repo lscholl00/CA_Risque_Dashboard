@@ -22,7 +22,7 @@ import os
 st.set_page_config(layout="wide") 
 
 # Set directory
-base_dir = '../streamlit_files'
+base_dir = '/streamlit_files'
 os.chdir(base_dir)
 
 # Load data
