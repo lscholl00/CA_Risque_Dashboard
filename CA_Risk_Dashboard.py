@@ -16,14 +16,13 @@ import geopandas as gpd
 import branca.colormap as cm
 import plotly.express as px
 import plotly.graph_objs as go
-import os
 
 
 st.set_page_config(layout="wide") 
 
 # Set directory
 base_dir = 'streamlit_files'
-os.chdir(base_dir)
+
 
 # Load data
 inseedf = pd.read_csv(f'{base_dir}/insee_df.csv')
