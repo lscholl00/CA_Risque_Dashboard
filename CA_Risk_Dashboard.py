@@ -26,7 +26,7 @@ base_dir = 'streamlit_files'
 os.chdir(base_dir)
 
 # Load data
-inseedf = pd.read_csv('insee_df.csv')
+inseedf = pd.read_csv(f'{base_dir}/insee_df.csv')
 inseedf['geometry'] = gpd.GeoSeries.from_wkt(inseedf['geometry'])
 inseedf['Code INSEE'] = inseedf['Code INSEE'].astype(str).str.strip()
 
@@ -63,25 +63,25 @@ def render_header():
 # Cached function for tab1  
 @st.cache_data
 def tab1_cache():
-    existing_df = pd.read_csv('coul_predictions.csv')
+    existing_df = pd.read_csv(f'{base_dir}/coul_predictions.csv')
     existing_df['Code INSEE'] = existing_df['Code INSEE'].astype(str).str.strip()
     return existing_df
 
 @st.cache_data
 def tab2_cache():
-    existing_df = pd.read_csv('rem_predictions.csv')
+    existing_df = pd.read_csv(f'{base_dir}/rem_predictions.csv')
     existing_df['Code INSEE'] = existing_df['Code INSEE'].astype(str).str.strip()
     return existing_df
 
 @st.cache_data
 def tab3_cache():
-    existing_df = pd.read_csv('sech_predictions.csv')
+    existing_df = pd.read_csv(f'{base_dir}/sech_predictions.csv')
     existing_df['Code INSEE'] = existing_df['Code INSEE'].astype(str).str.strip()
     return existing_df
     
 @st.cache_data
 def load_historical():
-    historical_risk_path = 'historical_risk.csv'
+    historical_risk_path = f'{base_dir}/historical_risk.csv'
     historical_risk = pd.read_csv(historical_risk_path)
     historical_risk['Code INSEE'] = historical_risk['Code INSEE'].astype(str).str.strip()
     historical_risk = historical_risk.groupby('Code INSEE').first().reset_index()
@@ -90,7 +90,7 @@ def load_historical():
 
 @st.cache_data
 def inon_events():
-    events_df = pd.read_csv('inon_events.csv')
+    events_df = pd.read_csv(f'{base_dir}/inon_events.csv')
     events_df['dat_deb'] = pd.to_datetime(events_df['dat_deb'])
     events_df['dat_fin'] = pd.to_datetime(events_df['dat_fin'])
     events_df['duration'] = (events_df['dat_fin'] - events_df['dat_deb']).dt.days + 1
@@ -98,7 +98,7 @@ def inon_events():
 
 @st.cache_data
 def sech_events():
-    events_df = pd.read_csv('sech_events.csv')
+    events_df = pd.read_csv(f'{base_dir}/sech_events.csv')
     events_df['dat_deb'] = pd.to_datetime(events_df['dat_deb'])
     events_df['dat_fin'] = pd.to_datetime(events_df['dat_fin'])
     events_df['duration'] = (events_df['dat_fin'] - events_df['dat_deb']).dt.days + 1
@@ -106,7 +106,7 @@ def sech_events():
 
 @st.cache_data
 def cat_events():
-    events_df = pd.read_csv('cat_events.csv')
+    events_df = pd.read_csv(f'{base_dir}/cat_events.csv')
     events_df['dat_deb'] = pd.to_datetime(events_df['dat_deb'])
     return events_df
 
