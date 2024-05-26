@@ -21,7 +21,7 @@ import plotly.graph_objs as go
 st.set_page_config(layout="wide") 
 
 # Set directory
-base_dir = 'streamlit_files'
+base_dir = '/streamlit_files'
 
 
 # Load data
