@@ -359,7 +359,13 @@ def render_tab3():
     with tab1:
         # Load the data
         events_df = inon_events()
+
+        # Filter events from 2000 to end of 2023
+        start_date = datetime(2000, 1, 1)  
+        end_date = datetime(2023, 12, 31)   
         
+        events_df = events_df[(events_df['dat_deb'] >= start_date) & (events_df['dat_deb'] <= end_date)]
+
         # Group by commune and date, and count the number of events
         commune_date_counts = events_df.groupby(['lib_commune', 'dat_deb']).size().reset_index(name='event_count')
 
@@ -389,6 +395,12 @@ def render_tab3():
     with tab2:
          # Load the data
          events_df = sech_events()
+
+         # Filter events from 2000 to end of 2023
+         start_date = datetime(2000, 1, 1)  
+         end_date = datetime(2023, 12, 31)   
+        
+         events_df = events_df[(events_df['dat_deb'] >= start_date) & (events_df['dat_deb'] <= end_date)]
          
          # Group by commune and date, and count the number of events
          commune_date_counts = events_df.groupby(['lib_commune', 'dat_deb']).size().reset_index(name='event_count')
