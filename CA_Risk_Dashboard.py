@@ -516,7 +516,7 @@ def render_tab3():
         
     with tab6:
         
-        html_file_path = r'C:\Users\Source\Downloads\Hackathon_Open_Data\sol_map.html'
+        html_file_path = 'sol_map.html'
         # Read the content of the HTML file
         with open(html_file_path, 'r', encoding='utf-8') as file:
             html_content = file.read()
