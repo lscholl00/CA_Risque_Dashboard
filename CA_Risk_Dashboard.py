@@ -39,8 +39,8 @@ def render_header():
     """
     
     # Define the columns for layout
-   col1, col2 = st.columns([1, 1100]) 
-  
+    col1, col2 = st.columns([1, 1100]) 
+    
     # Add title to col2
     with col2:
         st.title("PréviRisque - Nord Pas De Calais")
