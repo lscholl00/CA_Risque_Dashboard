@@ -31,8 +31,6 @@ inseedf['Code INSEE'] = inseedf['Code INSEE'].astype(str).str.strip()
 #==============================================================================
 # Header
 #==============================================================================
-st.cache_data.clear()
-
 def render_header():
     """
     This function render the header of the dashboard with the following items:
