@@ -40,21 +40,11 @@ def render_header():
     """
     
     # Define the columns for layout
-    col1, col2, col3 = st.columns([1, 200, 1100]) 
+    col1 = st.columns([1, 200, 1100]) 
     
-    # Add image to col1
-    with col1:
-        st.markdown(
-            """
-            <div style='background-color: white; padding: 7px; display: inline-block;'>
-                <img src="https://logo-marque.com/wp-content/uploads/2021/03/Credit-Agricole-Logo.png" width="150">
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-    
+  
     # Add title to col3
-    with col3:
+    with col1:
         st.title("PréviRisque - Nord Pas De Calais")
         
 # Cached function for tab1  
